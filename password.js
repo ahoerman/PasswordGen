@@ -3,6 +3,7 @@ class PasswordGenObj {
         this.length = length;
         this.characters = characters;
     }
+
     generatePassword() {
         const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -23,15 +24,12 @@ class PasswordGenObj {
             }
             if ((this.characters).includes("Special Characters")) {
                 newPasswordArray = [...newPasswordArray, ...specialChar];
-            } else {
-                console.log("Please pick atleast one set of characters!")
-                // passwordPrompts();
-            }
-            console.log(newPasswordArray);
-            console.log(newPasswordArray[25]);
-        } else {
+        }
+        return newPasswordArray;
+        }
+
+         else {
             console.log("Please pick a length between 8 and 128!");
-            // passwordPrompts();
         }
     }
 }
