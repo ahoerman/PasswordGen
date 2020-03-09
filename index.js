@@ -1,9 +1,10 @@
-let inquirer = require("inquirer");
-let PasswordGenObj = require("./password.js");
+const inquirer = require("inquirer");
+const PasswordGenObj = require("./password.js");
+const chalk = require("chalk")
 
 let newRandomPassword = "";
 
-console.log("Lets Generate a Password!");
+console.log(chalk.bold.green("Lets Generate a Password!"));
 
 let passwordPrompts = () =>
     inquirer
@@ -25,7 +26,8 @@ let passwordPrompts = () =>
                 let rand = newArray[Math.floor(Math.random()*newArray.length)];
                 newRandomPassword = newRandomPassword.concat(rand);
             }
-            console.log(newRandomPassword);
+            console.log(chalk.bold("Your Randomly Generated Password:"));
+            console.log(chalk.blue(newRandomPassword));
         });
 
 passwordPrompts();
